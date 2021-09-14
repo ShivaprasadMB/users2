@@ -21,33 +21,33 @@ public class UserController {
 	@Autowired
 	UserDao user;
 	
-    @RequestMapping("/")
+    @RequestMapping("/spring")
     public String home()
     {
     	return "Login";
     }
-    @RequestMapping("/register")
+    @RequestMapping("/spring/register")
     public String register()
     {
     	return "Register";
     }
 	
     
-	@RequestMapping("/getall")
+	@RequestMapping("/spring/getall")
 	public String getAll(ModelMap map){
         map.addAttribute("users", user.getAll());
         System.out.println(user.getAll());
         return "UserList";
     }
 	
-	@RequestMapping("/add")
+	@RequestMapping("/spring/add")
     public String save(@ModelAttribute User u1,ModelMap map) {
         user.save(u1);
         
-        return "redirect:/";
+        return "redirect:/spring";
     }
 	
-	@RequestMapping("/login")
+	@RequestMapping("/spring/login")
 	public String login(@RequestParam String username,@RequestParam String password,ModelMap map)
 	{
 		
