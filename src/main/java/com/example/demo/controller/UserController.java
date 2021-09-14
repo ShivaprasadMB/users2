@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	UserDao user;
 	
-    @RequestMapping("/spring")
+    @RequestMapping("/spring/")
     public String home()
     {
     	return "Login";
